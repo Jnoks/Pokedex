@@ -1,0 +1,8 @@
+:root {
+  --color-background: #ffffff;
+  --color-text: #1f2937;
+  --color-primary: #9f0908;
+  --spacing-md: 16px;
+  --radius: 8px;
+  --font-body: system-ui, sans-serif;
+}
