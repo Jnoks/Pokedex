@@ -8,9 +8,11 @@ let allPokemonNames = [];
 let searchCache = {};
 
 async function init() {
+  toggleLoading(true);
   await loadPokemonNames();
   await loadPokemon();
   renderPokemon(allPokemon);
+  toggleLoading(false);
 }
 
 async function loadPokemonNames() {
@@ -45,10 +47,12 @@ function renderPokemon(pokemonList) {
 async function loadMorePokemon() {
   const buttonRef = document.getElementById("loadMoreButton");
   buttonRef.disabled = true;
+  toggleLoading(true);
   listStart += 20;
   listEnd = Math.min(listEnd + 20, MAX_POKEMON);
   await loadPokemon();
   renderPokemon(allPokemon);
+  toggleLoading(false);
   buttonRef.disabled = false;
   checkLoadMoreEnd();
 }
@@ -112,6 +116,15 @@ function toggleLoadMore(visible) {
 function showNotFound(visible) {
   if (visible) {
     document.getElementById("content").innerHTML = notFoundTemplate();
+  }
+}
+
+function toggleLoading(visible) {
+  const loadingRef = document.getElementById("loadingScreen");
+  if (visible) {
+    loadingRef.classList.remove("d-none");
+  } else {
+    loadingRef.classList.add("d-none");
   }
 }
 
