@@ -19,28 +19,15 @@
       <div class="search-bar">
         <input
           id="searchInput"
-          data-id="search-input"
           type="text"
           placeholder="min. 3 letters"
           oninput="filterPokemon()"
         />
-        <button
-          id="searchButton"
-          data-id="search-button"
-          onclick="filterPokemon()"
-        >
-          Search
-        </button>
+        <button id="searchButton" onclick="filterPokemon()">Search</button>
       </div>
     </header>
-    <main id="content" data-id="content"></main>
-    <button
-      id="loadMoreButton"
-      data-id="load-more-button"
-      onclick="loadMorePokemon()"
-    >
-      Load more
-    </button>
+    <main id="content"></main>
+    <button id="loadMoreButton" onclick="loadMorePokemon()">Load more</button>
     <footer class="pokedex-footer">
       <address class="footer-imprint">Jnoks · Developer Akademie</address>
       <div class="pokedex-speaker"></div>
@@ -48,6 +35,6 @@
     <div id="loadingScreen" class="loading-screen d-none">
       <div class="pokeball-spinner"></div>
     </div>
-    <dialog id="detailDialog" data-id="dialog"></dialog>
+    <dialog id="detailDialog"></dialog>
   </body>
 </html>

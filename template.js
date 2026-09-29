@@ -3,7 +3,7 @@ function pokemonCard(pokemon) {
   return `
     <button class="card type-${mainType}" data-id="card">
       <span class="card-id">#${pokemon.id}</span>
-      <img src="${getImageUrl(pokemon.id)}" alt="${pokemon.name}" data-id="card-image" />
+      <img src="${getImageUrl(pokemon.id)}" alt="${pokemon.name}" />
         <span class="card-name">${pokemon.name}</span>
       <span class="type-badges">${typeBadges(pokemon)}</span>
     </button>
@@ -24,5 +24,5 @@ function getImageUrl(id) {
 }
 
 function notFoundTemplate() {
-  return `<p class="not-found" data-id="not-found">No Pokémon found</p>`;
+  return `<p class="not-found">No Pokémon found</p>`;
 }
