@@ -1,7 +1,7 @@
 :root {
-  --color-background: #ffffff;
-  --color-text: #1f2937;
-  --color-primary: #9f0908;
+  --color-background: #1b1b22;
+  --color-text: #f2f2f2;
+  --color-primary: #d1272e;
   --spacing-md: 16px;
   --radius: 8px;
   --font-body: system-ui, sans-serif;
