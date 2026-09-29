@@ -22,8 +22,15 @@
           data-id="search-input"
           type="text"
           placeholder="min. 3 letters"
+          oninput="filterPokemon()"
         />
-        <button id="searchButton" data-id="search-button">Search</button>
+        <button
+          id="searchButton"
+          data-id="search-button"
+          onclick="filterPokemon()"
+        >
+          Search
+        </button>
       </div>
     </header>
     <main id="content" data-id="content"></main>

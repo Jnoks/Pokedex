@@ -22,3 +22,7 @@ function typeBadges(pokemon) {
 function getImageUrl(id) {
   return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/transparent/${id}.png`;
 }
+
+function notFoundTemplate() {
+  return `<p class="not-found" data-id="not-found">No Pokémon found</p>`;
+}
