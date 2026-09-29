@@ -14,7 +14,7 @@ function typeBadges(pokemon) {
   let badges = "";
   for (const typeInfo of pokemon.types) {
     const typeName = typeInfo.type.name;
-    badges += `<span class="badge"><img src="./assets/icons/types/${typeName}.svg" alt="" />${typeName}</span>`;
+    badges += `<span class="badge"><img class="type-${typeName}" src="./assets/icons/types/${typeName}.svg" alt="" />${typeName}</span>`;
   }
   return badges;
 }
