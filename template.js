@@ -4,8 +4,8 @@ function pokemonCard(pokemon) {
     <button class="card type-${mainType}" data-id="card">
       <span class="card-id">#${pokemon.id}</span>
       <img src="${getImageUrl(pokemon.id)}" alt="${pokemon.name}" data-id="card-image" />
-      <h2>${pokemon.name}</h2>
-      <div class="type-badges">${typeBadges(pokemon)}</div>
+        <span class="card-name">${pokemon.name}</span>
+      <span class="type-badges">${typeBadges(pokemon)}</span>
     </button>
   `;
 }
@@ -13,7 +13,8 @@ function pokemonCard(pokemon) {
 function typeBadges(pokemon) {
   let badges = "";
   for (const typeInfo of pokemon.types) {
-    badges += `<span class="badge">${typeInfo.type.name}</span>`;
+    const typeName = typeInfo.type.name;
+    badges += `<span class="badge"><img src="./assets/icons/types/${typeName}.svg" alt="" />${typeName}</span>`;
   }
   return badges;
 }
