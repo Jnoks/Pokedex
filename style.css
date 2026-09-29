@@ -55,6 +55,7 @@ main {
   image-rendering: pixelated;
   position: relative;
   transition: transform 0.2s;
+  margin-top: 14px;
 }
 
 .card:hover img {
@@ -75,6 +76,7 @@ main {
   top: 8px;
   right: 12px;
   opacity: 0.6;
+  z-index: 1;
 }
 
 .badge {
