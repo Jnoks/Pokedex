@@ -4,10 +4,19 @@ const MAX_POKEMON = 151;
 let allPokemon = [];
 let listStart = 1;
 let listEnd = 20;
+let allPokemonNames = [];
+let searchCache = {};
 
 async function init() {
+  await loadPokemonNames();
   await loadPokemon();
   renderPokemon(allPokemon);
+}
+
+async function loadPokemonNames() {
+  const response = await fetch(BASE_URL + "?limit=" + MAX_POKEMON);
+  const data = await response.json();
+  allPokemonNames = data.results;
 }
 
 async function loadPokemon() {
@@ -51,16 +60,38 @@ function checkLoadMoreEnd() {
   }
 }
 
-function filterPokemon() {
+async function filterPokemon() {
   const term = document.getElementById("searchInput").value.toLowerCase();
   if (term.length < 3) {
     showAllPokemon();
     return;
   }
-  const matches = allPokemon.filter((pokemon) => pokemon.name.includes(term));
+  const matches = await getMatchingPokemon(term);
   renderPokemon(matches);
   toggleLoadMore(false);
   showNotFound(matches.length === 0);
+}
+
+async function getMatchingPokemon(term) {
+  const matchingNames = allPokemonNames.filter((entry) =>
+    entry.name.includes(term),
+  );
+  const matches = [];
+  for (const entry of matchingNames) {
+    matches.push(await getOrFetchPokemon(entry.name));
+  }
+  return matches;
+}
+
+async function getOrFetchPokemon(name) {
+  const loaded = allPokemon.find((pokemon) => pokemon.name === name);
+  if (loaded) {
+    return loaded;
+  }
+  if (!searchCache[name]) {
+    searchCache[name] = await fetchPokemon(name);
+  }
+  return searchCache[name];
 }
 
 function showAllPokemon() {
