@@ -1,0 +1,117 @@
+body {
+  padding: 24px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  width: 200px;
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;
+  color: #fff;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+  width: 120px;
+  margin-inline: auto;
+  image-rendering: pixelated;
+}
+
+.card h2 {
+  text-transform: capitalize;
+  margin-block: 8px;
+}
+
+.card-id {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  opacity: 0.6;
+}
+
+.badge {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 2px 10px;
+  margin-right: 6px;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+#loadMoreButton {
+  display: block;
+  margin: 32px auto;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: var(--radius);
+  font-size: 16px;
+}
+
+#loadMoreButton:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.type-normal {
+  background-color: #a8a878;
+}
+.type-fire {
+  background-color: #f08030;
+}
+.type-water {
+  background-color: #6890f0;
+}
+.type-electric {
+  background-color: #d4a017;
+}
+.type-grass {
+  background-color: #78c850;
+}
+.type-ice {
+  background-color: #58aaaa;
+}
+.type-fighting {
+  background-color: #c03028;
+}
+.type-poison {
+  background-color: #a040a0;
+}
+.type-ground {
+  background-color: #b8a038;
+}
+.type-flying {
+  background-color: #a890f0;
+}
+.type-psychic {
+  background-color: #f85888;
+}
+.type-bug {
+  background-color: #a8b820;
+}
+.type-rock {
+  background-color: #b8a038;
+}
+.type-ghost {
+  background-color: #705898;
+}
+.type-dragon {
+  background-color: #7038f8;
+}
+.type-fairy {
+  background-color: #ee99ac;
+}
