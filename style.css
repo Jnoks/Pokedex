@@ -49,7 +49,7 @@ main {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-.card img {
+.card > img {
   width: 120px;
   margin-inline: auto;
   image-rendering: pixelated;
@@ -58,7 +58,7 @@ main {
   margin-top: 14px;
 }
 
-.card:hover img {
+.card:hover > img {
   transform: scale(1.15);
 }
 
