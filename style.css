@@ -127,6 +127,9 @@ main {
   padding: 16px 24px;
   margin-bottom: 32px;
   box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .pokedex-footer {
@@ -137,6 +140,9 @@ main {
   background-color: var(--color-primary);
   padding: 16px 24px;
   box-shadow: inset 0 6px 0 rgba(0, 0, 0, 0.25);
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
 }
 
 .footer-imprint {

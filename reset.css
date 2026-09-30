@@ -1,4 +1,3 @@
-/* Grundregeln für alle Elemente */
 *,
 *::before,
 *::after {
@@ -7,7 +6,6 @@
   padding: 0;
 }
 
-/* Dokument */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -17,13 +15,11 @@
 body {
   min-height: 100vh;
   min-height: 100dvh;
-  font-family: var(--font-body);
   line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-background);
 }
 
-/* Medien */
 img,
 svg,
 video {
@@ -31,13 +27,11 @@ video {
   max-width: 100%;
 }
 
-/* Listen */
 ul,
 ol {
   list-style: none;
 }
 
-/* Formular-Elemente */
 button,
 input,
 textarea,
