@@ -6,6 +6,8 @@ let listStart = 1;
 let listEnd = 20;
 let allPokemonNames = [];
 let searchCache = {};
+let currentList = [];
+let currentIndex = 0;
 
 async function init() {
   toggleLoading(true);
@@ -36,10 +38,11 @@ async function fetchPokemon(id) {
 }
 
 function renderPokemon(pokemonList) {
+  currentList = pokemonList;
   const contentRef = document.getElementById("content");
   let html = "";
-  for (const pokemon of pokemonList) {
-    html += pokemonCard(pokemon);
+  for (let index = 0; index < pokemonList.length; index++) {
+    html += pokemonCard(pokemonList[index], index);
   }
   contentRef.innerHTML = html;
 }
@@ -126,6 +129,37 @@ function toggleLoading(visible) {
   } else {
     loadingRef.classList.add("d-none");
   }
+}
+
+function openDetail(index) {
+  currentIndex = index;
+  renderDetail();
+  document.getElementById("detailDialog").showModal();
+  document.body.style.overflow = "hidden";
+}
+
+function closeDetail() {
+  document.getElementById("detailDialog").close();
+}
+
+function unlockScroll() {
+  document.body.style.overflow = "";
+}
+
+function renderDetail() {
+  const pokemon = currentList[currentIndex];
+  document.getElementById("detailDialog").innerHTML = detailTemplate(pokemon);
+}
+
+function switchDetail(step) {
+  currentIndex = currentIndex + step;
+  if (currentIndex < 0) {
+    currentIndex = currentList.length - 1;
+  }
+  if (currentIndex >= currentList.length) {
+    currentIndex = 0;
+  }
+  renderDetail();
 }
 
 init();
