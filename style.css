@@ -380,8 +380,14 @@ dialog::backdrop {
 
 .device-top {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
+}
+
+.flat-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .lcd-frame {
@@ -420,8 +426,9 @@ dialog::backdrop {
 
 .device-controls {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   margin-top: auto;
 }
 
