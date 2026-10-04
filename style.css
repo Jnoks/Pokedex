@@ -398,8 +398,8 @@ dialog::backdrop {
 
 .lcd-screen {
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 12px;
   background-color: #b8c9a3;
   border-radius: 6px;
   padding: 12px;
