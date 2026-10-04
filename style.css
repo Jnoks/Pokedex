@@ -540,6 +540,12 @@ dialog::backdrop {
 @media (max-width: 480px) {
   main {
     padding-inline: 12px;
+    gap: 16px;
+  }
+
+  .card {
+    width: calc(50% - 8px);
+    padding: 12px;
   }
 
   .pokedex-header {
