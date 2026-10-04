@@ -403,6 +403,8 @@ dialog::backdrop {
 
 .lcd-screen img {
   width: 110px;
+  height: 110px;
+  object-fit: contain;
   image-rendering: pixelated;
 }
 
