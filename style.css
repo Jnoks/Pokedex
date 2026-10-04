@@ -517,6 +517,26 @@ dialog::backdrop {
   border-radius: 4px;
 }
 
+@media (max-width: 360px) {
+  .card-name {
+    font-size: 16px;
+  }
+
+  .card > img {
+    width: 90px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+
+  .badge img {
+    width: 14px;
+    height: 14px;
+  }
+}
+
 @media (max-width: 480px) {
   main {
     padding-inline: 12px;
