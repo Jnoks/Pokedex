@@ -414,6 +414,10 @@ dialog::backdrop {
   image-rendering: pixelated;
 }
 
+.lcd-data {
+  width: 130px;
+}
+
 .lcd-data p {
   font-size: 14px;
   line-height: 1.6;
