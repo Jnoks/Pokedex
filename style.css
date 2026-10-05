@@ -359,7 +359,7 @@ dialog::backdrop {
   position: relative;
   display: flex;
   gap: 10px;
-  width: min(760px, 92vw);
+  width: min(1000px, 92vw);
   background-color: #14141a;
   border-radius: 16px;
 }
@@ -415,8 +415,8 @@ dialog::backdrop {
 }
 
 .lcd-screen img {
-  width: 110px;
-  height: 110px;
+  width: clamp(110px, 13vw, 170px);
+  height: clamp(110px, 13vw, 170px);
   object-fit: contain;
   image-rendering: pixelated;
 }
@@ -426,13 +426,13 @@ dialog::backdrop {
 }
 
 .lcd-data p {
-  font-size: 14px;
+  font-size: clamp(14px, 1.1vw, 18px);
   line-height: 1.6;
 }
 
 .lcd-name {
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: clamp(16px, 1.3vw, 22px);
 }
 
 .device-controls {
