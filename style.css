@@ -346,6 +346,9 @@ dialog {
   border: none;
   padding: 0;
   background: transparent;
+  max-height: 95dvh;
+  max-width: 95vw;
+  overflow-y: auto;
 }
 
 dialog::backdrop {
@@ -538,7 +541,7 @@ dialog::backdrop {
   }
 
   .card > img {
-    width: 90px;
+    width: 100%;
   }
 
   .badge {
@@ -549,6 +552,10 @@ dialog::backdrop {
   .badge img {
     width: 14px;
     height: 14px;
+  }
+
+  .type-badges {
+    flex-wrap: wrap;
   }
 }
 
@@ -569,11 +576,21 @@ dialog::backdrop {
 
   .search-bar {
     width: 100%;
+    margin-left: 0;
+    justify-content: center;
   }
 
   .search-bar input {
-    width: auto;
-    flex: 1;
+    width: 170px;
+  }
+
+  .footer-imprint {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .pokedex-speaker {
+    width: 60px;
   }
 }
 
@@ -589,6 +606,37 @@ dialog::backdrop {
   .device-right {
     border-radius: 4px 4px 16px 16px;
     clip-path: none;
-    padding-top: 20px;
   }
+
+  .device-left,
+  .device-right {
+    padding: 14px;
+  }
+
+  .lcd-screen {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .lcd-data {
+    width: auto;
+    text-align: center;
+  }
+}
+
+.lcd-frame {
+  padding: 8px;
+}
+
+.lcd-screen img {
+  width: 100px;
+  height: 100px;
+}
+
+.text-screen {
+  padding: 10px;
+}
+
+.key {
+  height: 18px;
 }
