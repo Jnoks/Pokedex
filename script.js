@@ -1,5 +1,5 @@
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
-const MAX_POKEMON = 151;
+const MAX_POKEMON = 1025;
 
 let allPokemon = [];
 let listStart = 1;

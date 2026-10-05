@@ -296,6 +296,10 @@ main {
   background-color: #8888a0;
 }
 
+.type-dark {
+  background-color: #705848;
+}
+
 .loading-screen {
   position: fixed;
   inset: 0;
