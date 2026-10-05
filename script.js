@@ -151,15 +151,23 @@ function renderDetail() {
   document.getElementById("detailDialog").innerHTML = detailTemplate(pokemon);
 }
 
-function switchDetail(step) {
+async function switchDetail(step) {
   currentIndex = currentIndex + step;
   if (currentIndex < 0) {
     currentIndex = currentList.length - 1;
   }
   if (currentIndex >= currentList.length) {
-    currentIndex = 0;
+    await handleDetailEnd();
   }
   renderDetail();
+}
+
+async function handleDetailEnd() {
+  if (currentList === allPokemon && listEnd < MAX_POKEMON) {
+    await loadMorePokemon();
+  } else {
+    currentIndex = 0;
+  }
 }
 
 init();
